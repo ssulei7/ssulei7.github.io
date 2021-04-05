@@ -1,4 +1,4 @@
-baseurl      = "https://ssulei7.github.io/blog"
+baseurl      = "https://ssulei7.github.io"
 title        = "Sully Squared Blog"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
