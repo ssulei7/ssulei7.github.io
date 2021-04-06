@@ -39,7 +39,7 @@ publishDir = "docs"
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
-      logoText = "home"
+      logoText = "$ cd home"
       logoHomeLink = "/"
     # or
     #
@@ -51,6 +51,11 @@ publishDir = "docs"
     identifier = "post"
     name       = "Post"
     url        = "/posts"
+
+  [[menu.main]]
+    identifier = "tags"
+    name       = "Tags"
+    url        = "/tags"
 
 [[params.social]]
     name = "github"
