@@ -49,7 +49,7 @@ publishDir = "docs"
   # And you can even create generic menu
   [[menu.main]]
     identifier = "post"
-    name       = "Post"
+    name       = "Posts"
     url        = "/posts"
 
   [[menu.main]]
