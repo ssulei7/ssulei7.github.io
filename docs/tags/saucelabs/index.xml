@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sully Squared</title>
-    <link>https://ssulei7.github.io/</link>
-    <description>Recent content on Sully Squared</description>
+    <title>saucelabs on Sully Squared</title>
+    <link>https://ssulei7.github.io/tags/saucelabs/</link>
+    <description>Recent content in saucelabs on Sully Squared</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Tue, 06 Apr 2021 13:16:49 -0500</lastBuildDate>
     
-	<atom:link href="https://ssulei7.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ssulei7.github.io/tags/saucelabs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,16 +19,6 @@
       
       <guid>https://ssulei7.github.io/posts/04-06-2021-saucelabs-azure-pipelines/</guid>
       <description>Overview of Saucelabs For those of you that don&amp;rsquo;t know, within the QA Automation world there are many tools in which we can leverage to distribute and run our Selenium tests on. One popular tool that I&amp;rsquo;ve used in the market is Saucelabs. While it is entirely possible to utilize your CI job&amp;rsquo;s resources to run these tests, one thing that made using Saucelabs very appealing to me was the ability to actually view video playback of your test in action.</description>
-    </item>
-    
-    <item>
-      <title>Welcome to my Blog</title>
-      <link>https://ssulei7.github.io/posts/04-05-2021-welcome-to-my-blog/</link>
-      <pubDate>Mon, 05 Apr 2021 17:57:48 -0500</pubDate>
-      
-      <guid>https://ssulei7.github.io/posts/04-05-2021-welcome-to-my-blog/</guid>
-      <description>About me Hi! I&amp;rsquo;m Sully, and welcome to my blog! I am a DevOps Engineer with a former background in software engineering and academia. I am well known for my iconic salmon blazer:
-Purpose of my Blog The purpose of this blog is to share my overall journey as to how I got to where I am right now, as well as share some of the things that I&amp;rsquo;m currently working on.</description>
     </item>
     
   </channel>

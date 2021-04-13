@@ -9,7 +9,7 @@ tags: ['personal']
 
 Hi! I'm Sully, and welcome to my blog! I am a DevOps Engineer with a former background in software engineering and academia. I am well known for my iconic salmon blazer:
 
-![Selfie](/selfie.jpg)
+![Selfie](selfie.jpg)
 
 ## Purpose of my Blog
 
