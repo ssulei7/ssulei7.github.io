@@ -154,9 +154,9 @@
 <p>They even have an official Azure Pipelines extension as well! The problem, however, is that they actually officially stopped supporting the extension. It also seems that they aren&rsquo;t even considering maintaining it, and encouraging me to comment on a thread that I highly doubt their product or engineering team is even taking seriously:</p>
 <p><img src="./images/rejection.jpg" alt="Rejection"></p>
 <p>That&rsquo;s pretty shameful, as Azure Pipelines has grown to be a very appealing CI platform in the last few years. Almost every single client I&rsquo;ve interacted with thus far in my career has transitioned from a particular CI platform, to Azure Pipelines. So since the extension is no longer supported, how can we recreate the functionality their prior extension did? Luckily for us, there&rsquo;s a work around.</p>
-<h2 id="saucelabs-html-embeding-capability">Saucelabs HTML Embeding Capability</h2>
-<p>Hidden deep within the Saucelabs Documentation, there is a capability that allows for generating custom made HTML reports with videos embeded within them:</p>
-<p><a href="https://wiki.saucelabs.com/display/DOCS/Embedding+Test+Results+in+HTML+Pages">Saucelabs Embeded Documentation</a></p>
+<h2 id="saucelabs-html-embedding-capability">Saucelabs HTML Embedding Capability</h2>
+<p>Hidden deep within the Saucelabs Documentation, there is a capability that allows for generating custom made HTML reports with videos embedded within them:</p>
+<p><a href="https://wiki.saucelabs.com/display/DOCS/Embedding+Test+Results+in+HTML+Pages">Saucelabs Embedded Documentation</a></p>
 <p>To quickly summarize this wiki page, there are really three requirements here to generate custom HTML reports:</p>
 <ol>
 <li>An html file containing a script such as the one below to embed an iframe of your job:</li>
@@ -171,7 +171,7 @@
 <p>A test case / job id orginating from a particular build.</p>
 </li>
 </ol>
-<p>Essentially, what we can do with this is generate a static html file via a quick command line application (or within your test automation framework, depedent on requirements) containing all of the videos of our executed test cases from our job as an artifact within our pipeline by utilizing a html publish task in the AzDO market place: <a href="https://marketplace.visualstudio.com/items?itemName=JakubRumpca.azure-pipelines-html-report">Publish HTML</a>.</p>
+<p>Essentially, what we can do with this is generate a static html file via a quick command line application (or within your test automation framework, d on requirements) containing all of the videos of our executed test cases from our job as an artifact within our pipeline by utilizing a html publish task in the AzDO market place: <a href="https://marketplace.visualstudio.com/items?itemName=JakubRumpca.azure-pipelines-html-report">Publish HTML</a>.</p>
 <p>With that being said, the example I will be demonstrating in this post is utilizing an API client for Saucelabs I created in Go to retrieve build related information of my test execution in which I generate my reports off of.</p>
 <p>Let&rsquo;s get started!</p>
 <h2 id="defining-a-build-name-for-your-test-execution-in-saucelabs">Defining a build name for your test execution in Saucelabs</h2>
@@ -191,7 +191,7 @@ browserOptions<span style="color:#f92672">.</span><span style="color:#a6e22e">se
 browserOptions<span style="color:#f92672">.</span><span style="color:#a6e22e">setCapability</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sauce:options&#34;</span><span style="color:#f92672">,</span> sauceOptions<span style="color:#f92672">)</span>
 </code></pre></div><p>Where <code>sauceBuildName</code> is a system property I am forwarding within my gradle execution in my CI:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gradlew test -Xmx3072m -Dgeb.env<span style="color:#f92672">=</span>sauceLabs -Dgeb.build.baseUrl<span style="color:#f92672">=</span>http://www.google.com -Dtest.set<span style="color:#f92672">=</span>Smoke -DsauceBuildName<span style="color:#f92672">=</span>**mybuildname**
-</code></pre></div><p>What this will allow me to do is be able to give an identifable name of my executed build within Saucelabs like this:</p>
+</code></pre></div><p>What this will allow me to do is be able to give an identifiable name of my executed build within Saucelabs like this:</p>
 <p><img src="./images/buildlistsauce.jpg" alt="Sauce Build List"></p>
 <p>Once we have that, we can then utilize my Sauce API Client to retrieve our respective build information.</p>
 <h2 id="interfacing-with-the-saucelabs-api-in-go">Interfacing with the Saucelabs API in Go</h2>
@@ -495,7 +495,7 @@ browserOptions<span style="color:#f92672">.</span><span style="color:#a6e22e">se
   <span style="color:#66d9ef">inputs</span>:
     <span style="color:#66d9ef">tabName</span>: <span style="color:#e6db74">&#39;Test Result Videos&#39;</span>
     <span style="color:#66d9ef">reportDir</span>: <span style="color:#e6db74">&#39;./path-to-report-file/index.html&#39;</span>
-</code></pre></div><p>Where the cmdline task will run our executable (exe, etc depedent on OS we targeted in our <code>go build .</code>) and the <code>PublishHtmlReport</code> task will publish the html file our executable generated. Which in turn, will leave you with a result like this:</p>
+</code></pre></div><p>Where the cmdline task will run our executable (exe, etc dependent on OS we targeted in our <code>go build .</code>) and the <code>PublishHtmlReport</code> task will publish the html file our executable generated. Which in turn, will leave you with a result like this:</p>
 <p><img src="./images/saucetable.jpg" alt="Sauce Table"></p>
 <h2 id="conclusion-and-retrospective">Conclusion and Retrospective</h2>
 <p>Overall, the fact that Saucelabs allows for us to create our own HTML reports is pretty sweet, where we don&rsquo;t need to rely on an extension for maintenance. The same method I utilized here can also technically be used in any CI platform of your choice where you can publish html reports. One thing that I am looking towards possibly improving in my quick and dirty CLI application is improving the overall HTML generation by using <a href="https://golang.org/pkg/html/template/">Go&rsquo;s HTML templating packages</a>. This will allow me to build my future templates moving forward in a more data driven way.</p>

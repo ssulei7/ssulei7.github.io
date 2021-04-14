@@ -25,11 +25,11 @@ They even have an official Azure Pipelines extension as well! The problem, howev
 
 That's pretty shameful, as Azure Pipelines has grown to be a very appealing CI platform in the last few years. Almost every single client I've interacted with thus far in my career has transitioned from a particular CI platform, to Azure Pipelines. So since the extension is no longer supported, how can we recreate the functionality their prior extension did? Luckily for us, there's a work around.
 
-## Saucelabs HTML Embeding Capability
+## Saucelabs HTML Embedding Capability
 
-Hidden deep within the Saucelabs Documentation, there is a capability that allows for generating custom made HTML reports with videos embeded within them:
+Hidden deep within the Saucelabs Documentation, there is a capability that allows for generating custom made HTML reports with videos embedded within them:
 
-[Saucelabs Embeded Documentation](https://wiki.saucelabs.com/display/DOCS/Embedding+Test+Results+in+HTML+Pages)
+[Saucelabs Embedded Documentation](https://wiki.saucelabs.com/display/DOCS/Embedding+Test+Results+in+HTML+Pages)
 
 To quickly summarize this wiki page, there are really three requirements here to generate custom HTML reports:
 
@@ -44,7 +44,7 @@ To quickly summarize this wiki page, there are really three requirements here to
 
 3. A test case / job id orginating from a particular build.
 
-Essentially, what we can do with this is generate a static html file via a quick command line application (or within your test automation framework, depedent on requirements) containing all of the videos of our executed test cases from our job as an artifact within our pipeline by utilizing a html publish task in the AzDO market place: [Publish HTML](https://marketplace.visualstudio.com/items?itemName=JakubRumpca.azure-pipelines-html-report).
+Essentially, what we can do with this is generate a static html file via a quick command line application (or within your test automation framework, d on requirements) containing all of the videos of our executed test cases from our job as an artifact within our pipeline by utilizing a html publish task in the AzDO market place: [Publish HTML](https://marketplace.visualstudio.com/items?itemName=JakubRumpca.azure-pipelines-html-report).
 
 With that being said, the example I will be demonstrating in this post is utilizing an API client for Saucelabs I created in Go to retrieve build related information of my test execution in which I generate my reports off of.
 
@@ -76,7 +76,7 @@ Where `sauceBuildName` is a system property I am forwarding within my gradle exe
 gradlew test -Xmx3072m -Dgeb.env=sauceLabs -Dgeb.build.baseUrl=http://www.google.com -Dtest.set=Smoke -DsauceBuildName=**mybuildname**
 ```
 
-What this will allow me to do is be able to give an identifable name of my executed build within Saucelabs like this:
+What this will allow me to do is be able to give an identifiable name of my executed build within Saucelabs like this:
 
 ![Sauce Build List](./images/buildlistsauce.jpg)
 
@@ -435,7 +435,7 @@ Now, within our YML pipeline file, we can now add the following tasks:
     reportDir: './path-to-report-file/index.html'
 ```
 
-Where the cmdline task will run our executable (exe, etc depedent on OS we targeted in our `go build .`) and the `PublishHtmlReport` task will publish the html file our executable generated. Which in turn, will leave you with a result like this:
+Where the cmdline task will run our executable (exe, etc dependent on OS we targeted in our `go build .`) and the `PublishHtmlReport` task will publish the html file our executable generated. Which in turn, will leave you with a result like this:
 
 ![Sauce Table](./images/saucetable.jpg)
 
