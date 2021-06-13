@@ -33,7 +33,7 @@ This particular sin is one that personally bothers me anytime I am reviewing a f
 
 While the page object model is a very good way of structuring our UI testing views, this shouldn't be the only pattern we need to rely on when architecting our automation framework. For example, there are many cases when we need to specify different behavior for different users, handling the creation of different web driver instances (e.g., Firefox, Chrome, etc), or maybe even creating small extensions to interface directly with APIs, databases, etc for data preparation and teardown. 
 
-Pigeon holing yourself into one pattern will not only cripple your automation, but will lead to extensive amounts of boiler plate as you are implementing functionality needed from your framework only at the UI level, where the cases I just listed become borderline impossible to address.
+Pigeonholing yourself into one pattern will not only cripple your automation, but will lead to extensive amounts of boiler plate as you are implementing functionality needed from your framework only at the UI level, where the cases I just listed become borderline impossible to address.
 
 Typically when I see a framework only using this pattern, this is a tell tale sign that the automation engineer implementing said framework has very poor understanding of the programming language they are utilizing. 
 
