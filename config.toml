@@ -58,12 +58,6 @@ publishDir = "docs"
     name       = "Tags"
     url        = "/tags"
 
-  [[menu.main]]
-    identifier = "portfolio"
-    name       = "Portfolio"
-    url        = "/portfolio"
-
 [[params.social]]
     name = "github"
     url = "https://github.com/ssulei7"
-    
