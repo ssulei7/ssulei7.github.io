@@ -15,10 +15,14 @@
             <pubDate>Sat, 15 May 2021 22:22:03 -0500</pubDate>
             
             <guid>https://ssulei7.github.io/posts/05-15-2021-qa-automation-fails/</guid>
-            <description>Overview Recently, I made a poll on what would be my next blog post topic, and a lot of my network is interested in what I view as major reasons that most QA Automation endeavors fail. Given that I spent a significant amount of my time in my early career doing SDET work, as well as beginning to develop an understanding the benefit of having a DevOps based culture within IT organizations, this post will discuss my conclusions as to what I feel makes for a failed automation effort.</description>
+            <description>Overview Recently, I made a poll on what would be my next blog post topic, and a lot of my network is interested in what I view as major reasons that most QA Automation endeavors fail:
+Given that I spent a significant amount of my time in my early career doing SDET work, as well as beginning to develop an understanding the benefit of having a DevOps based culture within IT organizations, this post will discuss my conclusions as to what I feel makes for a failed automation effort.</description>
             <content type="html"><![CDATA[<h2 id="overview">Overview</h2>
-<p>Recently, I made a poll on what would be my next blog post topic, and a lot of my network is interested in what I view as major reasons that most QA Automation endeavors fail. Given that I spent a significant amount of my time in my early career doing SDET work, as well as beginning to develop an understanding the benefit of having a DevOps based culture within IT organizations, this post will discuss my conclusions as to what I feel makes for a failed automation effort.</p>
-<p>Some of my talking points will be very biased, and may be unpopular opinions in the QA world. However, although something may be unpopular, doesn&rsquo;t necessarily mean it&rsquo;s incorrect. With that being said, these are what I feel are some of the main reasons why most QA automation fails.</p>
+<p>Recently, I made a poll on what would be my next blog post topic, and a lot of my network is interested in what I view as major reasons that most QA Automation endeavors fail:</p>
+<p><img src="images/poll.jpg" alt="Poll"></p>
+<p>Given that I spent a significant amount of my time in my early career doing SDET work, as well as beginning to develop an understanding the benefit of having a DevOps based culture within IT organizations, this post will discuss my conclusions as to what I feel makes for a failed automation effort.</p>
+<p>Some of my talking points will be a bit biased, and may be unpopular opinions in the QA world. However, please take my views as constructive criticism regarding the things that I have seen over the years.</p>
+<p>With that being said, these are what I feel are some of the main reasons why most QA automation fails.</p>
 <h2 id="automation-team-is-siloed-from-the-development-team">Automation team is siloed from the development team</h2>
 <p><img src="images/silo.jpg" alt="Silo"></p>
 <p>Sin number one, the QA / QA Automation team works in a silo, with little to no visibility in regards to what is happening within their Sprint.</p>
