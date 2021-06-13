@@ -25,6 +25,7 @@ publishDir = "docs"
   keywords = "homepage, blog"
   images = [""]
 
+
 [taxonomies]
     category = "blog"
     tag      = "tags"
