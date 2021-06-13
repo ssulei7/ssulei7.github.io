@@ -5,4 +5,4 @@ draft: false
 type: page
 ---
 
-Placeholder
+Placeholder text
