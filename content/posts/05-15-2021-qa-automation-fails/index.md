@@ -1,5 +1,5 @@
 ---
-title: "Why most QA Automation Fails"
+title: "Why most QA Automation fails"
 date: 2021-05-15T22:22:03-05:00
 draft: false
 tags: ['qa', 'automation', 'devops', "design"]
