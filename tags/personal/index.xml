@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>personal on Sully Squared</title>
+    <link>https://ssulei7.github.io/tags/personal/</link>
+    <description>Recent content in personal on Sully Squared</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 05 Apr 2021 17:57:48 -0500</lastBuildDate><atom:link href="https://ssulei7.github.io/tags/personal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to my Blog</title>
+      <link>https://ssulei7.github.io/posts/04-05-2021-welcome-to-my-blog/</link>
+      <pubDate>Mon, 05 Apr 2021 17:57:48 -0500</pubDate>
+      
+      <guid>https://ssulei7.github.io/posts/04-05-2021-welcome-to-my-blog/</guid>
+      <description>About me Hi! I&amp;rsquo;m Sully, and welcome to my blog! I am a DevOps Engineer with a former background in software engineering and academia. I am well known for my iconic salmon blazer:
+Purpose of my Blog The purpose of this blog is to share my overall journey as to how I got to where I am right now, as well as share some of the things that I&amp;rsquo;m currently working on.</description>
+    </item>
+    
+  </channel>
+</rss>
