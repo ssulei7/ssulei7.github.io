@@ -3,7 +3,7 @@ title: "How I embed Saucelab Build Videos into Azure Pipelines"
 date: 2021-04-06T13:16:49-05:00
 draft: false
 toc: false
-tags: ['saucelabs', 'azure pipelines', 'cicd', 'qa automation']
+tags: ['saucelabs', 'azure pipelines', 'cicd', 'qa automation', 'azure devops', 'azure', 'microsoft']
 ---
 
 
