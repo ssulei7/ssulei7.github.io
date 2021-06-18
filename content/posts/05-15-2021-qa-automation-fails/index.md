@@ -16,7 +16,7 @@ Given that I spent a significant amount of my time in my early career doing SDET
 
 Some of my talking points will be a bit biased, and may be unpopular opinions in the QA world. However, please take my views as constructive criticism regarding the things that I have seen over the years. 
 
-With that being said, these are what I feel are some of the main reasons why most QA automation fails.
+With that being said, here is what I feel are some of the main reasons why most QA automation fails.
 
 ## Automation team is siloed from the development team
 
