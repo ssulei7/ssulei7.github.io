@@ -3,6 +3,7 @@ title: "Why most QA Automation fails"
 date: 2021-05-15T22:22:03-05:00
 draft: false
 tags: ['qa', 'automation', 'devops', "design"]
+description: "A discussion as to why most QA Automation endeavors fail, or are doomed from the beginning"
 ---
 
 

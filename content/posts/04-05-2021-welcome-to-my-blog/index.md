@@ -3,6 +3,7 @@ title: "Welcome to my Blog"
 date: 2021-04-05T17:57:48-05:00
 draft: false
 tags: ['personal']
+description: "A post welcoming my viewers to my blog, as well as outlining what will be discussed on this website."
 ---
 
 ## About me
