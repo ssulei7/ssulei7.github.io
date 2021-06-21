@@ -22,7 +22,7 @@ publishDir = "docs"
 
   # Metadata mostly used in document's head
   description = "Sully Suleiman's Blog"
-  keywords = "homepage, blog"
+  keywords = "homepage, blog, sully suleiman, sully squared, devops engineer, software engineer"
   images = [""]
 
 
