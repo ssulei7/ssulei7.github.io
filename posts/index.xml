@@ -82,7 +82,7 @@ Given that I spent a significant amount of my time in my early career doing SDET
 <ol>
 <li>An html file containing a script such as the one below to embed an iframe of your job:</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://app.saucelabs.com/video-embed/YOUR_JOB_ID.js?auth=AUTH_TOKEN&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://app.saucelabs.com/video-embed/YOUR_JOB_ID.js?auth=AUTH_TOKEN&#34;</span>&gt;
 &lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><ol start="2">
 <li>
@@ -97,7 +97,7 @@ Given that I spent a significant amount of my time in my early career doing SDET
 <p>Let&rsquo;s get started!</p>
 <h2 id="defining-a-build-name-for-your-test-execution-in-saucelabs">Defining a build name for your test execution in Saucelabs</h2>
 <p>One important piece of information our test execution needs (on the framework level) is a build execution name. While there are many ways to build out our capabilities for Selenium, here is what I&rsquo;m currently doing within my remote web driver capabilities in my Geb/Spock implementation:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">String sauceUsername <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">getenv</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SAUCE_USER&#34;</span><span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">String sauceUsername <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">getenv</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SAUCE_USER&#34;</span><span style="color:#f92672">)</span>
 String sauceAccessKey <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">getenv</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SAUCE_KEY&#34;</span><span style="color:#f92672">)</span>
 
 <span style="color:#75715e">//capabilities
@@ -111,7 +111,7 @@ browserOptions<span style="color:#f92672">.</span><span style="color:#a6e22e">se
 browserOptions<span style="color:#f92672">.</span><span style="color:#a6e22e">setCapability</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;browserVersion&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;latest&#34;</span><span style="color:#f92672">)</span>
 browserOptions<span style="color:#f92672">.</span><span style="color:#a6e22e">setCapability</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sauce:options&#34;</span><span style="color:#f92672">,</span> sauceOptions<span style="color:#f92672">)</span>
 </code></pre></div><p>Where <code>sauceBuildName</code> is a system property I am forwarding within my gradle execution in my CI:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gradlew test -Xmx3072m -Dgeb.env<span style="color:#f92672">=</span>sauceLabs -Dgeb.build.baseUrl<span style="color:#f92672">=</span>http://www.google.com -Dtest.set<span style="color:#f92672">=</span>Smoke -DsauceBuildName<span style="color:#f92672">=</span>**mybuildname**
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gradlew test -Xmx3072m -Dgeb.env<span style="color:#f92672">=</span>sauceLabs -Dgeb.build.baseUrl<span style="color:#f92672">=</span>http://www.google.com -Dtest.set<span style="color:#f92672">=</span>Smoke -DsauceBuildName<span style="color:#f92672">=</span>**mybuildname**
 </code></pre></div><p>What this will allow me to do is be able to give an identifiable name of my executed build within Saucelabs like this:</p>
 <p><img src="./images/buildlistsauce.jpg" alt="Sauce Build List"></p>
 <p>Once we have that, we can then utilize my Sauce API Client to retrieve our respective build information.</p>
@@ -120,11 +120,11 @@ browserOptions<span style="color:#f92672">.</span><span style="color:#a6e22e">se
 <p>Ensure you pull my <a href="https://github.com/ssulei7/saucelabs-client-go">Saucelabs API Client</a> into your go.mod file.</p>
 <p>If you never used used dependencies in go, please refer to the official <a href="https://golang.org/doc/modules/managing-dependencies">Golang Documentation</a>.</p>
 <p>Be sure to also to view the README.MD file to ensure you can authenticate appropriately into my client library. Here&rsquo;s a quick example of instantiating a new client:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sauce</span>.<span style="color:#a6e22e">NewClient</span>(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">getEnv</span>(<span style="color:#e6db74">&#34;SAUCE_KEY&#34;</span>), <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">getEnv</span>(<span style="color:#e6db74">&#34;SAUCE_USER&#34;</span>), <span style="color:#e6db74">&#34;&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sauce</span>.<span style="color:#a6e22e">NewClient</span>(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">getEnv</span>(<span style="color:#e6db74">&#34;SAUCE_KEY&#34;</span>), <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">getEnv</span>(<span style="color:#e6db74">&#34;SAUCE_USER&#34;</span>), <span style="color:#e6db74">&#34;&#34;</span>)
 </code></pre></div><p>Where <code>&quot;&quot;</code> allows for us to use Saucelabs default base URL.</p>
 <h3 id="pulling-down--filtering-builds-for-a-particular-user">Pulling down / filtering builds for a particular user</h3>
 <p>Once you have the client library pulled down and instantiate a new client, you can then utilize the library to pull all builds and filter by the build name:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sauce</span>.<span style="color:#a6e22e">NewClient</span>(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">getEnv</span>(<span style="color:#e6db74">&#34;SAUCE_KEY&#34;</span>), <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">getEnv</span>(<span style="color:#e6db74">&#34;SAUCE_USER&#34;</span>), <span style="color:#e6db74">&#34;&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sauce</span>.<span style="color:#a6e22e">NewClient</span>(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">getEnv</span>(<span style="color:#e6db74">&#34;SAUCE_KEY&#34;</span>), <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">getEnv</span>(<span style="color:#e6db74">&#34;SAUCE_USER&#34;</span>), <span style="color:#e6db74">&#34;&#34;</span>)
 <span style="color:#a6e22e">builds</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">GetBuilds</span>()
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">build</span> <span style="color:#a6e22e">sauce</span>.<span style="color:#a6e22e">Build</span>
 <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
@@ -144,12 +144,12 @@ browserOptions<span style="color:#f92672">.</span><span style="color:#a6e22e">se
 </code></pre></div><p>Once we find / validate the appropriate build exists, now we must find all the test case id&rsquo;s that were executed within this build.</p>
 <h3 id="finding-particular-test-cases-for-a-build">Finding particular test cases for a build</h3>
 <p>To find test cases associated with our build, we can pull down all the jobs that were executed by a particular user:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">jobs</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">GetJobs</span>()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">jobs</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">GetJobs</span>()
 
 <span style="color:#75715e">//where we will store all filtered jobs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myJobs</span> []<span style="color:#a6e22e">sauce</span>.<span style="color:#a6e22e">Job</span>
 </code></pre></div><p>And then we can go ahead and find all the jobs containing our build name and add it to our list:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
     <span style="color:#75715e">// iterate thru jobs to find those that are within my build
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">job</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">jobs</span> {
         <span style="color:#75715e">//check if the current job contains my build name
@@ -167,7 +167,7 @@ browserOptions<span style="color:#f92672">.</span><span style="color:#a6e22e">se
 <li>Organize them in a table using a css import of Bootstrap.</li>
 </ol>
 <p>Our function should look something like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">generateHtml</span>(<span style="color:#a6e22e">sauceKey</span>, <span style="color:#a6e22e">userName</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">jobs</span> <span style="color:#f92672">*</span>[]<span style="color:#a6e22e">sauce</span>.<span style="color:#a6e22e">Job</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">generateHtml</span>(<span style="color:#a6e22e">sauceKey</span>, <span style="color:#a6e22e">userName</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">jobs</span> <span style="color:#f92672">*</span>[]<span style="color:#a6e22e">sauce</span>.<span style="color:#a6e22e">Job</span>) {
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">htmlTemplate</span> = <span style="color:#e6db74">`
 </span><span style="color:#e6db74">&lt;!DOCTYPE html&gt;
 </span><span style="color:#e6db74">&lt;html lang=&#34;en&#34;&gt;
@@ -229,7 +229,7 @@ browserOptions<span style="color:#f92672">.</span><span style="color:#a6e22e">se
 </li>
 </ul>
 <p>From there, in the next section of code:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">job</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">jobs</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">job</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">jobs</span> {
     <span style="color:#a6e22e">hashKey</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">generateKey</span>(<span style="color:#a6e22e">sauceKey</span>, <span style="color:#a6e22e">userName</span>, <span style="color:#a6e22e">job</span>.<span style="color:#a6e22e">ID</span>)
     <span style="color:#a6e22e">scriptString</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(
         <span style="color:#e6db74">`&lt;tr&gt;
@@ -254,7 +254,7 @@ browserOptions<span style="color:#f92672">.</span><span style="color:#a6e22e">se
 <li>Appending the table row string into our multi-line string template</li>
 </ul>
 <p>One thing I&rsquo;d like to highlight is the <code>generateKey</code> function, which is one I defined and looks as followed:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">generateKey</span>(<span style="color:#a6e22e">sauceKey</span>, <span style="color:#a6e22e">userName</span>, <span style="color:#a6e22e">message</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">generateKey</span>(<span style="color:#a6e22e">sauceKey</span>, <span style="color:#a6e22e">userName</span>, <span style="color:#a6e22e">message</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
 	<span style="color:#a6e22e">key</span> <span style="color:#f92672">:=</span> []byte(<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%s:%s&#34;</span>, <span style="color:#a6e22e">userName</span>, <span style="color:#a6e22e">sauceKey</span>))
 	<span style="color:#a6e22e">mac</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">hmac</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">md5</span>.<span style="color:#a6e22e">New</span>, <span style="color:#a6e22e">key</span>)
 	<span style="color:#a6e22e">mac</span>.<span style="color:#a6e22e">Write</span>([]byte(<span style="color:#a6e22e">message</span>))
@@ -262,7 +262,7 @@ browserOptions<span style="color:#f92672">.</span><span style="color:#a6e22e">se
 }
 </code></pre></div><p>Here I am following the <a href="https://wiki.saucelabs.com/display/DOCS/Building+Sharable+Links+to+Test+Results">advice</a> given by the Saucelabs team to generate an md5 auth token to our particular test case.</p>
 <p>Once we complete iterating through our IDs and building out our table rows, we then do the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">htmlTemplate</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">htmlTemplate</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`
 </span><span style="color:#e6db74">	&lt;/tr&gt;
 </span><span style="color:#e6db74">    &lt;/table&gt;
 </span><span style="color:#e6db74">&lt;/body&gt;
@@ -283,7 +283,7 @@ browserOptions<span style="color:#f92672">.</span><span style="color:#a6e22e">se
 <li>Writing that multi-line html string as a byte array, into our newly created file.</li>
 </ul>
 <p>More or less, that&rsquo;s how the Go code looks like, and here is all of the code strung together as a finished product:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
 <span style="color:#f92672">import</span> (
 	<span style="color:#e6db74">&#34;crypto/hmac&#34;</span>
@@ -388,11 +388,11 @@ browserOptions<span style="color:#f92672">.</span><span style="color:#a6e22e">se
 	<span style="color:#a6e22e">generateHtml</span>(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">getEnv</span>(<span style="color:#e6db74">&#34;SAUCE_USER&#34;</span>), <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">getEnv</span>(<span style="color:#e6db74">&#34;SAUCE_KEY&#34;</span>), <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">myJobs</span>)
 }
 </code></pre></div><p>We can the build our Go application by running</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go build .
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go build .
 </code></pre></div><p>And copy over the appropriate executable into the repo containing our tests.</p>
 <h2 id="executing-the-html-generator-within-azure-pipelines">Executing the HTML Generator within Azure Pipelines</h2>
 <p>Now, within our YML pipeline file, we can now add the following tasks:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># run my tests</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># run my tests</span>
 - <span style="color:#f92672">task</span>: <span style="color:#ae81ff">Gradle@2</span>
   <span style="color:#f92672">inputs</span>:
     <span style="color:#f92672">workingDirectory</span>: <span style="color:#e6db74">&#39;&#39;</span>
