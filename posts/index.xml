@@ -1,11 +1,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on Sully Squared</title>
+        <title>Posts on Sully Squared Blog</title>
         <link>https://ssulei7.github.io/posts/</link>
-        <description>Recent content in Posts on Sully Squared</description>
+        <description>Recent content in Posts on Sully Squared Blog</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
-        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <language>en</language>
         <lastBuildDate>Sat, 15 May 2021 22:22:03 -0500</lastBuildDate>
         <atom:link href="https://ssulei7.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
@@ -19,34 +18,34 @@
 Given that I spent a significant amount of my time in my early career doing SDET work, as well as beginning to develop an understanding the benefit of having a DevOps based culture within IT organizations, this post will discuss my conclusions as to what I feel makes for a failed automation effort.</description>
             <content type="html"><![CDATA[<h2 id="overview">Overview</h2>
 <p>Recently, I made a poll on what would be my next blog post topic, and a lot of my network is interested in what I view as major reasons that most QA Automation endeavors fail:</p>
-<p><img src="images/poll.jpg" alt="Poll"></p>
+<p><img alt="Poll" src="/posts/05-15-2021-qa-automation-fails/images/poll.jpg"></p>
 <p>Given that I spent a significant amount of my time in my early career doing SDET work, as well as beginning to develop an understanding the benefit of having a DevOps based culture within IT organizations, this post will discuss my conclusions as to what I feel makes for a failed automation effort.</p>
 <p>Some of my talking points will be a bit biased, and may be unpopular opinions in the QA world. However, please take my views as constructive criticism regarding the things that I have seen over the years.</p>
 <p>With that being said, here is what I feel are some of the main reasons why most QA automation fails.</p>
 <h2 id="automation-team-is-siloed-from-the-development-team">Automation team is siloed from the development team</h2>
-<p><img src="images/silo.jpg" alt="Silo"></p>
+<p><img alt="Silo" src="/posts/05-15-2021-qa-automation-fails/images/silo.jpg"></p>
 <p>Sin number one, the QA / QA Automation team works in a silo, with little to no visibility in regards to what is happening within their Sprint.</p>
 <p>From an automation development perspective, this makes understanding what changes are going to break my existing tests EXTREMELY cumbersome. More often than not, teams that work in a silo wait until development is complete to realize their  automation is crumbling because a developer completely reworked how that view functions within the application under test.</p>
 <p>Furthermore, when an automation team detaches themselves from development, they lose insight as to how they can make their tests more efficient when building out their test scenarios, views, hooks, services, etc.</p>
 <p>My best advice for those that are doing UI / Service Automation; integrate yourself with the team in which you&rsquo;re building those tests for. Be a part of their sprint, as well as ensure capacity is accounted for automation based work. A proactive approach is much better than a reactive approach.</p>
 <h2 id="only-using-page-object-model-pattern">Only using Page Object Model pattern</h2>
-<p><img src="images/pageobject.png" alt="PageObjectPattern"></p>
+<p><img alt="PageObjectPattern" src="/posts/05-15-2021-qa-automation-fails/images/pageobject.png"></p>
 <p>This particular sin is one that personally bothers me anytime I am reviewing a framework.</p>
 <p>While the page object model is a very good way of structuring our UI testing views, this shouldn&rsquo;t be the only pattern we need to rely on when architecting our automation framework. For example, there are many cases when we need to specify different behavior for different users, handling the creation of different web driver instances (e.g., Firefox, Chrome, etc), or maybe even creating small extensions to interface directly with APIs, databases, etc for data preparation and teardown.</p>
 <p>Pigeonholing yourself into one pattern will not only cripple your automation, but will lead to extensive amounts of boiler plate as you are implementing functionality needed from your framework only at the UI level, where the cases I just listed become borderline impossible to address.</p>
 <p>Typically when I see a framework only using this pattern, this is a tell tale sign that the automation engineer implementing said framework has very poor understanding of the programming language they are utilizing.</p>
 <p>My recommendation for those falling victim to this particular automation sin is to engage in more professional development around design patterns, programming fundamentals, etc.</p>
 <p>There are actually two books I recommend that will help a lot: <strong>Clean Code by Robert C Martin</strong> and <strong>Design Patterns: Elements of Reusable Object-Oriented Software by the &ldquo;gang of four&rdquo;</strong>.</p>
-<p><img src="images/cleancode.jpg" alt="CleanCode"></p>
-<p><img src="images/gangoffour.jpg" alt="GangOfFour"></p>
+<p><img alt="CleanCode" src="/posts/05-15-2021-qa-automation-fails/images/cleancode.jpg"></p>
+<p><img alt="GangOfFour" src="/posts/05-15-2021-qa-automation-fails/images/gangoffour.jpg"></p>
 <h2 id="attempting-to-automate-everything">Attempting to automate everything</h2>
-<p><img src="images/dontautomate.jpg" alt="DontAutomateEverything"></p>
+<p><img alt="DontAutomateEverything" src="/posts/05-15-2021-qa-automation-fails/images/dontautomate.jpg"></p>
 <p>Last but not least, the ultimate sin of any automation implementation: <strong>attempting to automate everything</strong>.</p>
 <p>This is to the contrary of what we typically say in DevOps: automate anything and everything. However, in the QA world, this is not always the case.</p>
 <p>In fact, rather than thinking of <em>&ldquo;How can I automate all my regression?&rdquo;</em>&hellip; we should rather ask the question <em><strong>What part of my regression is considered critical path for the business? What tests, at the end of the day, really fall in line of the customer experience?</strong></em></p>
 <p>When you ask yourself this question, it can save you a lot of time (both implementation and execution) for your overall automation effort. I have seen throughout my career many cases where folks will add redundancy to the automation suite that were either a result of exploratory tests, an edge case in production, or a one time bug that is being retested for no reason.</p>
 <p>We should also remember the place of integration / UI tests within our testing lifecycle by revisiting the testing pyramid:</p>
-<p><img src="images/testpyramid.png" alt="TestPyramid"></p>
+<p><img alt="TestPyramid" src="/posts/05-15-2021-qa-automation-fails/images/testpyramid.png"></p>
 <p>In our overall testing cycle, UI and Integration (service) tests are only but a fraction of our overall testing effort. In any development team, unit tests <strong>SHOULD</strong> be a majority of our regression.</p>
 <p>tldr: at the black box level, automate only the things that matter.</p>
 <h2 id="conclusion">Conclusion</h2>
@@ -73,7 +72,7 @@ Given that I spent a significant amount of my time in my early career doing SDET
 <li><a href="https://wiki.saucelabs.com/display/DOCS/Setting+Up+Sauce+Labs+with+TeamCity">TeamCity</a></li>
 </ul>
 <p>They even have an official Azure Pipelines extension as well! The problem, however, is that they actually officially stopped supporting the extension. It also seems that they aren&rsquo;t even considering maintaining it, and encouraging me to comment on a thread that I highly doubt their product or engineering team is even taking seriously:</p>
-<p><img src="./images/rejection.jpg" alt="Rejection"></p>
+<p><img alt="Rejection" src="/posts/04-06-2021-saucelabs-azure-pipelines/images/rejection.jpg"></p>
 <p>That&rsquo;s pretty shameful, as Azure Pipelines has grown to be a very appealing CI platform in the last few years. Almost every single client I&rsquo;ve interacted with thus far in my career has transitioned from a particular CI platform, to Azure Pipelines. So since the extension is no longer supported, how can we recreate the functionality their prior extension did? Luckily for us, there&rsquo;s a work around.</p>
 <h2 id="saucelabs-html-embedding-capability">Saucelabs HTML Embedding Capability</h2>
 <p>Hidden deep within the Saucelabs Documentation, there is a capability that allows for generating custom made HTML reports with videos embedded within them:</p>
@@ -113,7 +112,7 @@ Given that I spent a significant amount of my time in my early career doing SDET
 </span></span></code></pre></div><p>Where <code>sauceBuildName</code> is a system property I am forwarding within my gradle execution in my CI:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gradlew test -Xmx3072m -Dgeb.env<span style="color:#f92672">=</span>sauceLabs -Dgeb.build.baseUrl<span style="color:#f92672">=</span>http://www.google.com -Dtest.set<span style="color:#f92672">=</span>Smoke -DsauceBuildName<span style="color:#f92672">=</span>**mybuildname**
 </span></span></code></pre></div><p>What this will allow me to do is be able to give an identifiable name of my executed build within Saucelabs like this:</p>
-<p><img src="./images/buildlistsauce.jpg" alt="Sauce Build List"></p>
+<p><img alt="Sauce Build List" src="/posts/04-06-2021-saucelabs-azure-pipelines/images/buildlistsauce.jpg"></p>
 <p>Once we have that, we can then utilize my Sauce API Client to retrieve our respective build information.</p>
 <h2 id="interfacing-with-the-saucelabs-api-in-go">Interfacing with the Saucelabs API in Go</h2>
 <h3 id="prereqs">Prereqs</h3>
@@ -417,7 +416,7 @@ Given that I spent a significant amount of my time in my early career doing SDET
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">tabName</span>: <span style="color:#e6db74">&#39;Test Result Videos&#39;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">reportDir</span>: <span style="color:#e6db74">&#39;./path-to-report-file/index.html&#39;</span>
 </span></span></code></pre></div><p>Where the cmdline task will run our executable (exe, etc dependent on OS we targeted in our <code>go build .</code>) and the <code>PublishHtmlReport</code> task will publish the html file our executable generated. Which in turn, will leave you with a result like this:</p>
-<p><img src="./images/saucetable.jpg" alt="Sauce Table"></p>
+<p><img alt="Sauce Table" src="/posts/04-06-2021-saucelabs-azure-pipelines/images/saucetable.jpg"></p>
 <h2 id="conclusion-and-retrospective">Conclusion and Retrospective</h2>
 <p>Overall, the fact that Saucelabs allows for us to create our own HTML reports is pretty sweet, where we don&rsquo;t need to rely on an extension for maintenance. The same method I utilized here can also technically be used in any CI platform of your choice where you can publish html reports. One thing that I am looking towards possibly improving in my quick and dirty CLI application is improving the overall HTML generation by using <a href="https://golang.org/pkg/html/template/">Go&rsquo;s HTML templating packages</a>. This will allow me to build my future templates moving forward in a more data driven way.</p>
 ]]></content>
@@ -433,7 +432,7 @@ Given that I spent a significant amount of my time in my early career doing SDET
 Purpose of my Blog The purpose of this blog is to share my overall journey as to how I got to where I am right now, as well as share some of the things that I&amp;rsquo;m currently working on.</description>
             <content type="html"><![CDATA[<h2 id="about-me">About me</h2>
 <p>Hi! I&rsquo;m Sully, and welcome to my blog! I am a DevOps Engineer with a former background in software engineering and academia. I am well known for my iconic salmon blazer:</p>
-<p><img src="selfie.jpg" alt="Selfie"></p>
+<p><img alt="Selfie" src="/posts/04-05-2021-welcome-to-my-blog/selfie.jpg"></p>
 <h2 id="purpose-of-my-blog">Purpose of my Blog</h2>
 <p>The purpose of this blog is to share my overall journey as to how I got to where I am right now, as well as share some of the things that I&rsquo;m currently working on. I also plan to share my perspective on certain topics surrounding IT in general.</p>
 <h2 id="so-what-exactly-will-i-be-focusing-on">So.. what exactly will I be focusing on?</h2>
