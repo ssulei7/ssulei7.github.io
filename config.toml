@@ -66,9 +66,5 @@ publishDir = "docs"
     url = "https://github.com/ssulei7"
 
 [[params.social]]
-    name = "twitter"
-    url = "https://twitter.com/_sullysquared"
-
-[[params.social]]
     name = "hackerrank"
     url = "https://hackerrank.com/sullysquared"
